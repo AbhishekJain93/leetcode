@@ -1,0 +1,86 @@
+import java.util.Deque;
+import java.util.LinkedList;
+
+// public class HitCounter {
+// 	Queue<Integer> q = new LinkedList<>();
+
+// 	public HitCounter() {
+
+// 	}
+
+// 	public void hit(int timestamp) {
+// 		q.offer(timestamp);
+
+// 	}
+
+// 	public int getHits(int timestamp) {
+// 		while (!q.isEmpty() && q.peek() + 300 <= timestamp)
+// 			q.poll();
+
+// 		return q.size();
+// 	}
+// }
+
+class HitCounter {
+
+	private int total;
+	private Deque<Pair> hits;
+
+	/** Initialize your data structure here. */
+	public HitCounter() {
+		// Initialize total to 0
+		this.total = 0;
+		this.hits = new LinkedList<Pair>();
+	}
+
+	/**
+	 * Record a hit.
+	 * 
+	 * @param timestamp - The current timestamp (in seconds granularity).
+	 */
+	public void hit(int timestamp) {
+		if (this.hits.isEmpty() || this.hits.getLast().x != timestamp) {
+			// Insert the new timestamp with count = 1
+			this.hits.add(new Pair(timestamp, 1));
+		} else {
+			// Update the count of latest timestamp by incrementing the count by 1
+
+			// Obtain the current count of the latest timestamp
+			int prevCount = this.hits.getLast().y;
+			// Remove the last pair of (timestamp, count) from the deque
+			this.hits.removeLast();
+			// Insert a new pair of (timestamp, updated count) in the deque
+			this.hits.add(new Pair(timestamp, prevCount + 1));
+		}
+		// Increment total
+		this.total++;
+	}
+
+	/**
+	 * Return the number of hits in the past 5 minutes.
+	 * 
+	 * @param timestamp - The current timestamp (in seconds granularity).
+	 */
+	public int getHits(int timestamp) {
+		while (!this.hits.isEmpty()) {
+			int diff = timestamp - this.hits.getFirst().x;
+			if (diff >= 300) {
+				// Decrement total by the count of the oldest timestamp
+				this.total -= this.hits.getFirst().y;
+				this.hits.removeFirst();
+			} else
+				break;
+		}
+		return this.total;
+	}
+}
+
+class Pair {
+	int x;
+	int y;
+
+	public Pair(int a, int b) {
+		x = a;
+		y = b;
+	}
+}
