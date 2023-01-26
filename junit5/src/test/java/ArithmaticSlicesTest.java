@@ -6,6 +6,7 @@ public class ArithmaticSlicesTest {
 	@Test
 	public void all_continuous() {
 
-		Assertions.assertThat(new ArithmaticSlices().numberOfArithmeticSlices(new int[] { 1, 2, 3, 4 })).isEqualTo(3);
+		Assertions.assertThat(new ArithmaticSlices413().numberOfArithmeticSlices(new int[] { 1, 2, 3, 4 }))
+				.isEqualTo(3);
 	}
 }

@@ -6,6 +6,6 @@ public class DetonateMaxBombsTest {
 	@Test
 	public void overlapping_bombs() {
 		int[][] bombs = new int[][] { { 1, 2, 3 }, { 2, 3, 1 }, { 3, 4, 2 }, { 4, 5, 3 }, { 5, 6, 4 } };
-		Assertions.assertThat(new DetonateMaxBombs().maximumDetonation(bombs)).isEqualTo(5);
+		Assertions.assertThat(new DetonateMaxBombs2101().maximumDetonation(bombs)).isEqualTo(5);
 	}
 }

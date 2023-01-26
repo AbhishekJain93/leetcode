@@ -6,7 +6,7 @@ public class BallFallTest {
 	@Test
 	void ball_fall_all_stuck() {
 
-		Assertions.assertThat(new BallFall().findBall(new int[][] { { -1, 1, 1, 1, -1 }, { -1, -1, -1, -1, -1 } }))
+		Assertions.assertThat(new BallFall1706().findBall(new int[][] { { -1, 1, 1, 1, -1 }, { -1, -1, -1, -1, -1 } }))
 				.isEqualTo(new int[] { -1, 1, 2, -1, -1 });
 
 	}

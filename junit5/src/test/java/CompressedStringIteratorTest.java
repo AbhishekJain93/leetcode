@@ -6,7 +6,7 @@ public class CompressedStringIteratorTest {
 	@Test
 	public void consecutive_next_calls() {
 
-		CompressedStringIterator stringIterator = new CompressedStringIterator("L1e2t1C1o1d1e1");
+		CompressedStringIterator604 stringIterator = new CompressedStringIterator604("L1e2t1C1o1d1e1");
 		Assertions.assertThat(stringIterator.next()).isEqualTo('L'); // return "L"
 		stringIterator.next(); // return "e"
 		stringIterator.next(); // return "e"

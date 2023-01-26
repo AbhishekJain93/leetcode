@@ -8,7 +8,7 @@ public class AllPathSourceTargetTest {
 	@Test
 	public void two_path() {
 
-		Assertions.assertThat(new AllPathSourceTarget().allPathsSourceTarget(
+		Assertions.assertThat(new AllPathSourceTarget797().allPathsSourceTarget(
 				new int[][] {
 						{ 1, 2 }, { 3 }, { 3 }, {}
 				}

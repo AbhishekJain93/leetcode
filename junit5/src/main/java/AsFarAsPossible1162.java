@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class AsFarAsPossible1162 {
 	public int maxDistance(int[][] grid) {

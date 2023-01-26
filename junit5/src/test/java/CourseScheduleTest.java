@@ -5,7 +5,7 @@ public class CourseScheduleTest {
 
 	@Test
 	public void single_edge_graph() {
-		Assertions.assertThat(new CourseSchedule().canFinish(2, new int[][] { { 0, 1 }, })).isEqualTo(true);
+		Assertions.assertThat(new CourseSchedule207().canFinish(2, new int[][] { { 0, 1 }, })).isEqualTo(true);
 
 	}
 }

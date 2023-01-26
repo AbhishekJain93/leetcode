@@ -5,13 +5,13 @@ public class BraceExpansionTest {
 
 	@Test
 	public void two_permutations() {
-		Assertions.assertArrayEquals(new BraceExpansion().expand("{a,b}c"),
+		Assertions.assertArrayEquals(new BraceExpansion1087().expand("{a,b}c"),
 				new String[] { "ac", "bc" });
 	}
 
 	@Test
 	public void multiple_permutations() {
-		Assertions.assertArrayEquals(new BraceExpansion().expand("{a,b}c{d,e}f"),
+		Assertions.assertArrayEquals(new BraceExpansion1087().expand("{a,b}c{d,e}f"),
 				new String[] { "acdf", "acef", "bcdf", "bcef" });
 	}
 }
